@@ -8,7 +8,7 @@ interface AnalyticsDashboardProps {
     avgVisitorsPerDay: string;
     amtVisitorsToday: number;
     timeseriesPageviews: Awaited<ReturnType<typeof analytics.retrieveDays>>;
-    topCountries: [string, number];
+    topCountries: [string, number][];
 }
 
 const Badge = ({percentage}: { percentage: number }) => {
@@ -24,7 +24,7 @@ const Badge = ({percentage}: { percentage: number }) => {
 
     return (
         <span className={`inline-flex gap-1 items-center rounded-md 
-        px-2 py-1 text-xs fond-medium ring-1 rind-inset ${
+        px-2 py-1 text-xs font-medium ring-1 ring-inset ${
             isPositive 
             ? positiveClassname 
             : isNeutral     
