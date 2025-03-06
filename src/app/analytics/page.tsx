@@ -32,8 +32,8 @@ const Page = async () => {
             const parsedKey = JSON.parse(key)
             const country = parsedKey?.country
 
-            if(country) {
-                if(topCountriesMap.has(country)) {
+            if (country) {
+                if (topCountriesMap.has(country)) {
                     const prevValue = topCountriesMap.get(country)!
                     topCountriesMap.set(country, prevValue + value)
                 } else {
@@ -43,7 +43,7 @@ const Page = async () => {
         }
     }
 
-    const topCountries = [...topCountriesMap.entries()].sort((a, b) => {
+    const topCountries = [...topCountriesMap.entries()].sort((a ,b) => {
         if(a[1] > b[1]) return -1
         else return 1
     }).slice(0, 5)
@@ -68,7 +68,6 @@ const Page = async () => {
             </div>
         </div>
     )
-
 }
 
 export default Page;
